@@ -1,0 +1,22 @@
+labview:
+  vi_server_port: 3363
+  export_images: true
+  image_format: png
+
+llm:
+  base_url: "http://localhost:11434/v1"  # Ollama default; change for LM Studio
+  model: "qwen2.5-coder:32b"            # text-only model
+  vision_model: "qwen2-vl:72b"          # vision model (used with --vision flag)
+  timeout_seconds: 120
+  max_concurrency: 4
+  force_json: true
+
+paths:
+  project_file: ""       # fill in at runtime or pass as --project-file CLI arg
+  output_dir: "./output"
+
+analysis:
+  use_vision: true                  # set false if no vision model available
+  skip_opaque: true                 # skip packed library / XControl VIs
+  complexity_threshold_nodes: 50   # above this node count → high complexity
+  failure_threshold_pct: 20        # verify_extraction exits 1 if more than this % fail

@@ -1,0 +1,3 @@
+pywin32>=306
+openai>=1.30.0
+pyyaml>=6.0
