@@ -314,7 +314,9 @@ def extract_vi_metadata(vi_com, entry: dict, cfg: dict) -> dict:
 
 def run_extraction(lvproj_path: Path, cfg: dict):
     import win32com.client  # Only available on Windows
+    import pythoncom
 
+    pythoncom.CoInitialize()
     meta_dir = get_subdir(cfg, "metadata")
     img_dir = get_subdir(cfg, "images")
     export_images = cfg["labview"]["export_images"]

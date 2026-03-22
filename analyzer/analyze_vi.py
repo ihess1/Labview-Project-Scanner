@@ -191,7 +191,7 @@ async def run_analysis(vi_names: list[str], cfg: dict, use_vision: bool):
 
     client = AsyncOpenAI(
         base_url=cfg["llm"]["base_url"],
-        api_key="not-needed",  # Ollama/LM Studio don't require a real key
+        api_key="ollama",  # Ollama/LM Studio ignore the value but SDK requires non-empty
     )
 
     system_prompt, user_template = _load_prompt_template()

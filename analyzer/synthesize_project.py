@@ -217,7 +217,7 @@ def run_synthesis(project_name: str, cfg: dict):
 
     client = OpenAI(
         base_url=cfg["llm"]["base_url"],
-        api_key="not-needed",
+        api_key="ollama",  # Ollama/LM Studio ignore the value but SDK requires non-empty
     )
 
     log.info("Sending synthesis prompt to LLM (%s)...", cfg["llm"]["model"])
